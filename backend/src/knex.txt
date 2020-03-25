@@ -1,0 +1,14 @@
+#comandos do knex
+
+#as tabelas sao criadas em suas respctivas migrations
+
+#cria tabela:
+   Knex.schem.createTable('nome da tabela', function(table) {
+      #camps:
+      table.string('id).primary();
+      table.string('name').notNullable();
+   })
+
+#após criar a tabela, é precisor rodar o codigo abaixo para executar a migrations
+
+   $ npx knex migrate:run
