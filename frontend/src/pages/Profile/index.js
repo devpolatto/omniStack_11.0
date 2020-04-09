@@ -23,6 +23,18 @@ export default function Profile() {
     })
   }, [ongId])
 
+  async function handleDeleteIncident(id) {
+    try {
+       await api.delete(`incidents/${id}`, {
+          headers: { 
+             Authorization: ongId,
+          }
+       });
+    } catch (err) {
+       alert('erro ao tentar deletar um caso');
+    }
+ }
+
   return (
    <div className="profile-container">
      <header>
@@ -48,7 +60,9 @@ export default function Profile() {
             <strong>VALOR:</strong>
             <p>{incident.value}</p>
 
-            <button type="button"><FiTrash2 size={20} color="#a8a8b3"/></button>
+            <button onClick={() => handleDeleteIncident(incident.id)} type="button">
+              <FiTrash2 size={20} color="#a8a8b3"/>
+            </button>
           </li>
         ))}
       </ul>
