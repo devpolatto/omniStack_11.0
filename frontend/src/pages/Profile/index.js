@@ -12,7 +12,7 @@ export default function Profile() {
   const history = useHistory();
 
   const ongId = localStorage.getItem("ongId");
-  const ongName = localStorage.getItem("ongName");
+  const ongName = localStorage.getItem("ongName").toUpperCase();
   
 
   useEffect(() => {
