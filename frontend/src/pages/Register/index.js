@@ -50,10 +50,10 @@ export default function Register() {
               value={name} onChange={e => setName(e.target.value)}
             />
             <input type="email" placeholder="email"
-              alue={email} onChange={e => setEmail(e.target.value)}
+              value={email} onChange={e => setEmail(e.target.value)}
             />
             <input placeholder="whatsapp"
-            alue={whatsapp} onChange={e => setWhatsapp(e.target.value)}
+              value={whatsapp} onChange={e => setWhatsapp(e.target.value)}
             />
 
             <div className="input-group">
